@@ -1,0 +1,21 @@
+title: David Murphy
+email: dave@schwuk.com
+description: > # this means to ignore newlines until "baseurl:"
+  Husband, Father, Developer, Author, School Governor, and organiser of
+  Code Cumbria.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: schwuk
+github_username: schwuk
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+  - jekyll-coffeescript
+  - jekyll-paginate
+  - jekyll-sitemap
+exclude:
+  - Gemfile
+  - Gemfile.lock
