@@ -2,10 +2,7 @@
 date:   2020-04-28 15:21:00 +0100
 layout: post
 title:  "Effective Remote Meetings"
-published: false
 ---
-# Effective Remote Meetings
-
 Since working remotely seems to be on-trend at the moment, I thought I would share some tips on effectively running meetings and how to apply them to your remote meetings.
 
 ## Do you even need a meeting?
