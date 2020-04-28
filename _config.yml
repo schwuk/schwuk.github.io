@@ -2,8 +2,7 @@ title: Suddenly, nothing happened
 author: David Murphy
 email: dave@schwuk.com
 description: > # this means to ignore newlines until "baseurl:"
-  Husband, Father, Developer, Author, School Governor, and organiser of
-  Code Cumbria.
+  Husband, father, engineering manager, author, developer, and powerlifter.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://blog.schwuk.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: schwuk
