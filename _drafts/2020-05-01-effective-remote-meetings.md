@@ -1,9 +1,9 @@
 ---
-date:   2020-04-28 15:21:00 +0100
+date:   2020-05-01 16:21:00 +0100
 layout: post
 title:  "Effective Remote Meetings"
 ---
-Since working remotely seems to be on-trend at the moment, I thought I would share some tips on effectively running meetings and how to apply them to your remote meetings.
+Since working remotely seems to be the topic of the moment, I thought I would share some tips on effectively running meetings and how to apply them to your remote meetings.
 
 ## Do you even need a meeting?
 
@@ -11,7 +11,7 @@ This is **by far** the most important question you need to answer. For every mee
 
 > Is this really the best use of **their** time?
 
-Meetings are a high-bandwidth and low-latency way to share & exchange information quickly, but they require all participants to be actively involved; they are a **synchronous** form of communication. Alternatively **asynchronous** communication - such as email, IM, collaborative documents - are low-bandwidth and high-latency, but it allows the participants to fit them into their schedule, rather than them fitting into yours.
+Meetings are a high-bandwidth and low-latency way to share & exchange information quickly, but they require all participants to be actively involved; they are a **synchronous** form of communication. Alternatively **asynchronous** communication - such as email, instant messaging, and collaborative documents - are low-bandwidth and high-latency, but it allows the participants to fit them into their schedule, rather than them fitting into yours.
 
 In business, people like _scheduling_ meetings because it makes **the organiser's job easier**; for the same reason, people dislike _attending_ meetings because they typically make it harder to get their own jobs done.
 
@@ -41,9 +41,9 @@ Use an asynchronous tool to collate the information.
 
 ## Selecting Participants
 
-It's all too easy to adopt a "safety in numbers" attitude to meetings. If you just add Bob, Alice, **and** Ted then everyone is "in the loop", right?
+It's all too easy to adopt a "safety in numbers" attitude to meetings; if you just add Bob, Alice, **and** Ted then everyone is "in the loop", right?
 
-The number of participants affects the information flow; you set out to have an inbound meeting and it works for **you**, but now the rest of your meeting participants are sitting through a bunch of sequential outbound meetings waiting for their turn to speak.
+The number of participants a meeting has directly affects the information flow of that meeting. What is intended to be in an inbound meeting for you is now and it works for **you**, but now the rest of your meeting participants are sitting through a bunch of sequential outbound meetings waiting for their turn to speak.
 
 Decide who is **essential** to your meeting and **stop there**. There are better ways to keep people informed than just padding your attendee list.
 
@@ -56,13 +56,15 @@ Choosing a slot for your meeting falls into two choices:
 
 If you are lucky, you'll be able to reconcile both. If not, you are going to have be pragmatic and balance the **when** and **who** of your meeting to get the best outcome.
 
+Since you've already figured out the purpose and intended outcome of the meeting, why not not include that information in advance. If your attendees know what the meeting is about and what is expected of them, your meeting can only benefit!
+
 ## It's meeting time!
 
 Up to now everything has applied to all types of meetings, but now we will cover some remote-specific topics as well.
 
 ### Be on time
 
-Each minute **you** are late for a meeting is multiplied by number of attendees. Respect the time of other people, and they will respect your time.
+Each minute **you** are late for a meeting is multiplied by the number of attendees. Respect the time of other people, and they will respect your time.
 
 Use reminders in your calendar application - I typically have two reminders for most meetings, one at 10 minutes before, and another 1 minute before.
 
@@ -70,11 +72,13 @@ Use reminders in your calendar application - I typically have two reminders for 
 
 Remote meetings - and conference calls - are notorious for wasting the first 5-10 mins with "can you hear me now?" or "let me get my headset".
 
-Check your equipment before the meeting. Do a test call if necessary. Does you headset work? Does your camera work. Is there background noise? Are you in front of a window? Fix the problems now instead of making others suffer.
+Check your equipment before the meeting. Do a test call if possible, especially if your setup has changed since your last call. Does your headset work? Does your camera work. Is there background noise? Are you in front of a window? Fix the problems now instead of making others suffer.
 
 Learn how to mute/unmute your microphone and enable/disable your camera.
 
 ### Sharing content
+
+There's nothing worse than the awkward silence while everybody in the meeting tries to read and digest the content you've just shared with them. In most situations you should be able to pre-share the content and switch the meeting from consumption to feedback and clarification. Google Calendar has support for [adding attachments](https://support.google.com/calendar/answer/6192039?co=GENIE.Platform%3DDesktop&hl=en) so make use of it.
 
 Be prepared for this too. Have the content ready. Close non-essential applications and browser tabs to avoid potential problems.
 
