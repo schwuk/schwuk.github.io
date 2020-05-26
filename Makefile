@@ -36,7 +36,7 @@ serve-with-drafts: ##@development Builds your site with drafts enabled any time 
 build: ##@development Performs a one off build your site to ./_site
 	@${RUN} jekyll build
 
-build: ##@development Performs a one off build your site with drafts enabled to ./_site
+build-with-drafts: ##@development Performs a one off build your site with drafts enabled to ./_site
 	@${RUN} jekyll build --drafts
 
 update: ##@development Update your gems to the latest available versions
