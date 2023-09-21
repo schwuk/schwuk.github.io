@@ -1,6 +1,7 @@
 PODMAN = $(shell which podman)
 PWD = $(shell pwd)
-RUN = ${PODMAN} run --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it localhost/gh-pages-site:latest
+NAME = $(shell basename ${PWD})
+RUN = ${PODMAN} run --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it localhost/${NAME}:latest
 
 #COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -45,6 +46,7 @@ clean:  ##@development Remove cached gems
 init: clean ##@development Setup the environment
 	@rm -rf vendor/bundle
 	@mkdir -p vendor/bundle
+	${PODMAN} build -t ${NAME} -f Dockerfile
 	@${RUN} gem update bundler
 	@${RUN} bundle install
 
