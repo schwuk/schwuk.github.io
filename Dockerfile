@@ -2,7 +2,7 @@ FROM docker.io/ruby:2.7.3-alpine
 
 RUN apk update && apk add --no-cache git
 
-RUN apk update && apk add --no-cache --virtual .build_deps make build-base
+RUN apk update && apk add --no-cache --virtual .build_deps make build-base libxml2-dev
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
