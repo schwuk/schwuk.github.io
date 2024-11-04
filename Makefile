@@ -1,7 +1,7 @@
-PODMAN = $(shell which podman)
+DOCKER = $(shell which docker)
 PWD = $(shell pwd)
 NAME = $(shell basename ${PWD})
-RUN = ${PODMAN} run --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it localhost/${NAME}:latest
+RUN = ${DOCKER} run --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it ${NAME}:latest
 
 #COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -41,12 +41,12 @@ build-with-drafts: ##@development Performs a one off build your site with drafts
 	@${RUN} jekyll build --drafts
 
 clean:  ##@development Remove cached gems
-	@rm -rf vendor/bundle
+	@sudo rm -rf vendor/bundle
 
 init: clean ##@development Setup the environment
 	@rm -rf vendor/bundle
 	@mkdir -p vendor/bundle
-	${PODMAN} build -t ${NAME} -f Dockerfile
+	${DOCKER} buildx build -t ${NAME} -f Dockerfile .
 	@${RUN} gem update bundler
 	@${RUN} bundle install
 
