@@ -44,10 +44,10 @@ clean:  ##@development Remove cached gems
 	@sudo rm -rf vendor/bundle
 
 init: clean ##@development Setup the environment
-	@rm -rf vendor/bundle
 	@mkdir -p vendor/bundle
 	${DOCKER} buildx build -t ${NAME} -f Dockerfile .
 	@${RUN} gem update bundler
+	@${RUN} bundle update --bundler
 	@${RUN} bundle install
 
 update: ##@development Update your gems to the latest available versions
