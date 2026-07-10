@@ -1,7 +1,15 @@
-CONTAINER = $(shell which container)
-PWD = $(shell pwd)
-NAME = $(shell basename ${PWD})
-RUN = ${CONTAINER} run --dns 1.1.1.1 --memory 4g --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it ${NAME}:latest
+CONTAINER = container
+NAME = $(shell basename ${CURDIR})
+
+# Deliberate workarounds, do not remove:
+# - Tailscale MagicDNS (100.100.100.100) is unreachable from the container VM
+DNS = --dns 1.1.1.1
+# - Apple Container's default 1GB VM memory OOM-kills (exit 137) native gem compiles
+MEMORY = --memory 4g
+
+RUN_FLAGS = ${DNS} ${MEMORY} --rm --volume="${CURDIR}:/src/site" --volume="${CURDIR}/vendor/bundle:/usr/local/bundle" -it
+RUN = ${CONTAINER} run ${RUN_FLAGS} ${NAME}:latest
+SERVE = ${CONTAINER} run ${RUN_FLAGS} -p 4000:4000 ${NAME}:latest
 
 #COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -24,15 +32,15 @@ HELP_FUN = \
     }; \
     print "\n"; }
 
-.PHONY: help
+.PHONY: help serve serve-with-drafts build build-with-drafts clean init update versions health-check shell
 help: ##@other Show this help.
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
 serve: ##@development Builds your site any time a source file changes and serves it locally
-	@${RUN} jekyll serve -H 0.0.0.0 -P 4000
+	@${SERVE} jekyll serve -H 0.0.0.0 -P 4000
 
 serve-with-drafts: ##@development Builds your site with drafts enabled any time a source file changes and serves it locally
-	@${RUN} jekyll serve -H 0.0.0.0 -P 4000 --drafts
+	@${SERVE} jekyll serve -H 0.0.0.0 -P 4000 --drafts
 
 build: ##@development Performs a one off build your site to ./_site
 	@${RUN} jekyll build
@@ -41,11 +49,11 @@ build-with-drafts: ##@development Performs a one off build your site with drafts
 	@${RUN} jekyll build --drafts
 
 clean:  ##@development Remove cached gems
-	@sudo rm -rf vendor/bundle
+	@rm -rf vendor/bundle
 
 init: clean ##@development Setup the environment
 	@mkdir -p vendor/bundle
-	${CONTAINER} build --dns 1.1.1.1 -t ${NAME} -f Dockerfile .
+	${CONTAINER} build ${DNS} -t ${NAME} -f Dockerfile .
 	@${RUN} gem update bundler
 	@${RUN} bundle update --bundler
 	@${RUN} bundle install
