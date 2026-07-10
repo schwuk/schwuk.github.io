@@ -1,7 +1,7 @@
-DOCKER = $(shell which docker)
+CONTAINER = $(shell which container)
 PWD = $(shell pwd)
 NAME = $(shell basename ${PWD})
-RUN = ${DOCKER} run --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it ${NAME}:latest
+RUN = ${CONTAINER} run --dns 1.1.1.1 --memory 4g --rm --volume="${PWD}:/src/site" --volume="${PWD}/vendor/bundle:/usr/local/bundle" -p 4000:4000 -it ${NAME}:latest
 
 #COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
@@ -45,7 +45,7 @@ clean:  ##@development Remove cached gems
 
 init: clean ##@development Setup the environment
 	@mkdir -p vendor/bundle
-	${DOCKER} buildx build -t ${NAME} -f Dockerfile .
+	${CONTAINER} build --dns 1.1.1.1 -t ${NAME} -f Dockerfile .
 	@${RUN} gem update bundler
 	@${RUN} bundle update --bundler
 	@${RUN} bundle install
