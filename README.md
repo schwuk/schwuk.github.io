@@ -6,13 +6,13 @@ The website is hosted using [GitHub Pages](http://pages.github.com/).
 
 ## Setting up development environment
 
-All the [Jekyll](https://jekyllrb.com/)/[Ruby](https://www.ruby-lang.org/en/) requirements can be used through an Open Containers Initiative (OCI) Container. I'm using [Podman](https://podman.io/).
+All the [Jekyll](https://jekyllrb.com/)/[Ruby](https://www.ruby-lang.org/en/) requirements can be managef through an Open Containers Initiative (OCI) Container. I'm using [Container](https://github.com/apple/container) from Apple.
 
 ### Prerequisites
 
 Before you begin, ensure you system has:
 
-- [Podman](https://podman.io/) (or [Docker](https://www.docker.com/) with `alias podman=docker`).
+- [Apple Container](https://github.com/apple/container)
 - [Make](https://www.gnu.org/software/make/).
 - A text editor.
 
